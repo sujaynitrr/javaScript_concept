@@ -83,16 +83,34 @@
 // console.log(newArray,"NewArray");
 
 //Q7. Find missing number
-const arr=[1,2,4] ;
- const missingArray =[];
-for(let i=0;i<=arr.length;i++){
-    missingArray[i]=0
-} 
-for(let i=0;i<missingArray.length-1;i++){
-    missingArray[arr[i]]++
-}
+// const arr=[1,2,4] ;
+//  const missingArray =[];
+// for(let i=0;i<=arr.length;i++){
+//     missingArray[i]=0
+// } 
+// for(let i=0;i<missingArray.length-1;i++){
+//     missingArray[arr[i]]++
+// }
 
-console.log(missingArray)
+// console.log(missingArray)
+
+//Q8 Remove duplicate value form array;
+// const arr =[2,2,3,1,2];
+
+let arr =[3,2,1];
+
+let i,j,key;
+for(let i=1;i<arr.length;i++){
+    key = arr[i];
+    j=i-1;
+    while(j>=0 && arr[j]>key){
+        arr[j+1]= arr[j];
+
+        j= j-1;
+    }
+    arr[j+1]=key
+}
+console.log(arr,"arr");
 
 
 

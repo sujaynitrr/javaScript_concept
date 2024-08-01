@@ -334,7 +334,7 @@
 
 // const object={
 //     firstName:"Sujay",
-//     lastName:"Kumar",
+//     lastName:"Kumar",  
 //     age:"28 years",
 //     qualification: "MCA"
 // }
@@ -365,14 +365,36 @@
 
 //********************getOwnPropertyDescriptor()****************** */
 
-const user={
-    firstName:"Sujay",
-    lastName:"Kumar"
+// const user={
+//     firstName:"Sujay",
+//     lastName:"Kumar"
+// };
+
+// const isFirstName = Object.getOwnPropertyDescriptor(user,'firstName');
+// console.log()
+
+
+//****************************Object Destructuring ********************************** */
+
+/*
+    Object destructuring is a javascript syntax feature that allow you to unpack properties from objects
+    into distinct variables. 
+    This technique provides a convenient way to extract values from objects
+*/
+
+/*
+   Object  destructuring  is a method of extracting properties from an object and assigning them to variable
+   using a pattern of curly braces {}
+*/
+
+const user = {
+  name: 'John Doe',
+  age: 30,
+  city: 'New York'
 };
 
-const isFirstName = Object.getOwnPropertyDescriptor(user,'firstName');
-console.log()
-
+const {name}=user;
+console.log(name)
 
 
 

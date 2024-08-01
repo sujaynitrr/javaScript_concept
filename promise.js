@@ -71,78 +71,78 @@
 //updateWallet
 
 
-const cart = ["Shoes", "jeans", "paint"];
-function validateCart(cart){
-    return true
-}
+// const cart = ["Shoes", "jeans", "paint"];
+// function validateCart(cart){
+//     return true
+// }
 
-function createOrder(cart) {
+// function createOrder(cart) {
 
-    const pr = new promise(function (resolve, reject) {
-        if (!validateCart(cart)) {
-            const error = new Error("Cart is not valid");
-            reject(error)
-        }
-        //Logic for valid Cart
-        const orderId = "1234";
-        if (orderId) {
-            setTimeout(() => {
-                resolve(orderId)
-                console.log(orderId)
-            }, 2000);
+//     const pr = new promise(function (resolve, reject) {
+//         if (!validateCart(cart)) {
+//             const error = new Error("Cart is not valid");
+//             reject(error)
+//         }
+//         //Logic for valid Cart
+//         const orderId = "1234";
+//         if (orderId) {
+//             setTimeout(() => {
+//                 resolve(orderId)
+//                 console.log(orderId)
+//             }, 2000);
 
-        }
+//         }
 
-    })
-    return pr
-}
+//     })
+//     return pr
+// }
 
 
-function proceedPayment(orderId) {
-    if (orderId) {
-        return new promise(function (resolve, reject) {
-            resolve("payment Sussesfull")
-        })
-    }
+// function proceedPayment(orderId) {
+//     if (orderId) {
+//         return new promise(function (resolve, reject) {
+//             resolve("payment Sussesfull")
+//         })
+//     }
 
-}
+// }
 
-function orderSummary(orderId) {
-    if (orderId) {
-        return new promise(function (resolve, reject) {
-            resolve("Order summary Details")
-        })
-    }
+// function orderSummary(orderId) {
+//     if (orderId) {
+//         return new promise(function (resolve, reject) {
+//             resolve("Order summary Details")
+//         })
+//     }
 
-}
+// }
 
-function updateWallet(orderId) {
-    if (orderId) {
-        return new promise(function (resolve, reject) {
-            resolve("3000");
-        })
+// function updateWallet(orderId) {
+//     if (orderId) {
+//         return new promise(function (resolve, reject) {
+//             resolve("3000");
+//         })
 
-    }
+//     }
 
-}
+// }
 
-createOrder(cart)
-    .then(function (orderId) {
-        console.log(orderId);
-        return orderId
-    })
-    .then(function (orderId) {
-        return orderSummary
-    })
-    .then(function (orderId) {
-        return proceedPayment(orderId)
-    })
-    .then(function (orderId) {
-        return updateWallet(orderId)
-    })
-    .catch(function(error){
-        console.log(error)
-    })
+// createOrder(cart)
+//     .then(function (orderId) {
+//         console.log(orderId);
+//         return orderId
+//     })
+//     .then(function (orderId) {
+//         return orderSummary
+//     })
+//     .then(function (orderId) {
+//         return proceedPayment(orderId)
+//     })
+//     .then(function (orderId) {
+//         return updateWallet(orderId)
+//     })
+//     .catch(function(error){
+//         console.log(error)
+//     })
 
     //promise API
 
@@ -175,6 +175,39 @@ createOrder(cart)
     //If all of them will fail it show aggregate error means list of array with all promise error
     //
     
+    //promise.all([]) Api
+    const p1 = new Promise(function(resolve,reject){
+        setTimeout(()=>resolve("P1 success"),1000)
+    })
+    const p2 = new Promise(function(resolve,reject){
+        setTimeout(()=>resolve("P2 success"),2000)
+    })
+    const p3 = new Promise(function(resolve,reject){
+        //setTimeout(()=>resolve("P3 success"),3000)
+        setTimeout(()=>reject("P3 fail"),3000)
+    })
+
+    // Promise.all([p1,p2,p3]).then((res)=>{
+    //     console.log(res,"res");
+    // })
+    // .catch((error)=>{
+    //     console.error(error)
+    // })
+
+
+    //Promise.allSettled([])
+
+    // Promise.allSettled([p1,p2,p3]).then((res)=>{
+    //     console.log(res,"res")
+    // })
+
+    //Promise.race([]) Api
+
+    // Promise.race([p1,p2,p3]).then((res)=>{
+    //     console.log(res,"res")
+    // }).catch((err)=>{
+    //     console.error(err)
+    // })
 
     
 
