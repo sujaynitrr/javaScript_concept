@@ -1,6 +1,7 @@
 // 1. Memoization is a technique in javascript for speed up application by caching the results of expensive 
 // function calls. when we will pass input it will not  go for again calculation. it will return value from cache.
-
+//Memoization optimizes expensive function calls by caching their results. It's useful for recursive or
+ //repetitive computations.
 
 /*
 There are two terminology in memoization

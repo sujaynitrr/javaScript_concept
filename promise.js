@@ -176,16 +176,16 @@
     //
     
     //promise.all([]) Api
-    const p1 = new Promise(function(resolve,reject){
-        setTimeout(()=>resolve("P1 success"),1000)
-    })
-    const p2 = new Promise(function(resolve,reject){
-        setTimeout(()=>resolve("P2 success"),2000)
-    })
-    const p3 = new Promise(function(resolve,reject){
+    // const p1 = new Promise(function(resolve,reject){
+    //     setTimeout(()=>resolve("P1 success"),1000)
+    // })
+    // const p2 = new Promise(function(resolve,reject){
+    //     setTimeout(()=>resolve("P2 success"),2000)
+    // })
+    //const p3 = new Promise(function(resolve,reject){
         //setTimeout(()=>resolve("P3 success"),3000)
-        setTimeout(()=>reject("P3 fail"),3000)
-    })
+    //     setTimeout(()=>reject("P3 fail"),3000)
+    // })
 
     // Promise.all([p1,p2,p3]).then((res)=>{
     //     console.log(res,"res");
@@ -208,6 +208,60 @@
     // }).catch((err)=>{
     //     console.error(err)
     // })
+
+    //const  cart =["pant","watch","pen"];
+    // const cart=[];
+    // create order
+
+    // function createOrder(cart){
+    //     if(cart.length>0){
+    //         return new Promise(function(resolve,reject){
+    //             resolve("Go for payment")
+    //         })
+    //     }else{
+    //         return new Promise(function(resolve,reject){
+    //             reject("Not valid cart please check it")
+    //         })
+    //     }
+
+    // }
+
+    // createOrder(cart)
+    // .then(function(msg){
+    //     console.log(msg,"msg");
+    // })
+    // .catch(function(msg){
+    //     console.log(msg,"msg");
+    // })
+
+    const p1 = new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            resolve("p1 promise")
+        },3000)
+    })
+
+    const p2= new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            reject("promise p2 failed");
+        })
+    })
+
+    // Promise.all([p1,p2])
+    // .then((value)=>{
+    //     console.log(value,"value")
+    // })
+    // .catch((error)=>{
+    //     console.log(error)
+
+    // })
+
+    Promise.allSettled([p1,p2])
+    .then((value)=>{
+        console.log(value,"value")
+    })
+    .catch((error)=>{
+        console.log(error,"error")
+    })
 
     
 

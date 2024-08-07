@@ -27,3 +27,34 @@
     Temporal Dead Zone
     1. Time since when the let variable was hoisted until it is initialized some value.
 */
+
+/*
+    /Block
+
+    1. Multiple line of statement combine in group in side curly brace ({}) that is known as Block.
+
+    example:
+        {
+            var a= 10;
+            let b=20;
+            const c=50;
+        }
+*/
+
+/*
+    /closure
+
+    1. javScript has a lexical scope environment 
+    2.  A closure is a function that has access to its outer function scope even after the function has returned
+    3.example 
+    function x() { 
+            var a = 7; 
+            function y() { 
+            console.log(a); 
+            } 
+            return y; 
+            } 
+            var z = x(); 
+            console.log(z);
+    }
+*/

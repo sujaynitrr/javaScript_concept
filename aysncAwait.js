@@ -43,12 +43,12 @@
 //After async await handling of promise is different approach
 
 //await is keyword which one used in side async function
-const p= new Promise((resolve,reject)=>{
-    setTimeout(()=>{
+// const p= new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
 
-        resolve("resolved promise");
-    },10000)
-})
+//         resolve("resolved promise");
+//     },10000)
+// })
 
 // async function handlePromise(){
 //     const val = await p;
@@ -56,14 +56,36 @@ const p= new Promise((resolve,reject)=>{
 // }
 // handlePromise()
 
-function getData(){
-    p.then((res)=>{
-        console.log(res)
-    })
+// function getData(){
+//     p.then((res)=>{
+//         console.log(res)
+//     })
 
-    console.log("Hello javascript");
+//     console.log("Hello javascript");
+// }
+// getData();
+
+const p1 = new Promise(function(resolve,reject){
+    setTimeout(() => {
+        resolve("P1 promise");
+    }, 10000);
+})
+
+const p2 = new  Promise(function(resolve,reject){
+    setTimeout(() => {
+        console.log("p2 promise")
+    }, 5000);
+})
+
+async function handlePromise(){
+    const data = await p1;
+    console.log(data);
+
+    const data2 = await p2;
+    console.log(data2)
+
 }
-getData();
+handlePromise();
 
     
 
