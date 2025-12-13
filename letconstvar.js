@@ -26,6 +26,8 @@
 /*
     Temporal Dead Zone
     1. Time since when the let variable was hoisted until it is initialized some value.
+    2. The time between when the variable is hoisted and when it is initialized is called the "temporal dead zone" (TDZ)
+    3. During this time, if you try to access the variable, you'll get a ReferenceError
 */
 
 /*
